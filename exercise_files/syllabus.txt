@@ -1,0 +1,6 @@
+discuss simple images before
+discuss anchors before
+discuss id before
+discuss mouseArea
+discuss row, before column
+discuss listview before scroll view
