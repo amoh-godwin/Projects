@@ -9,7 +9,7 @@ ApplicationWindow {
     height: 640
     color: "#000000"
     title: qsTr('Adobe After Effects')
-    property string images: '[{"file": "images/flamingo.jpg"}]'
+    property string images: '[{"file": "../images/flamingo.jpg"}]'
     property string filenames: '[{"flamingo.jpg": ["C:/images/love"] }]'
     property bool opened: false
     property string selected_file: ""
@@ -41,7 +41,7 @@ ApplicationWindow {
                         color: "white"
                         text: "File Info"
                         font {
-                            family: "Segoe UI, fonts/Roboto-Regular.ttf"
+                            family: "Segoe UI, ../fonts/Roboto-Regular.ttf"
                             pixelSize: 20
                         }
 
@@ -52,7 +52,7 @@ ApplicationWindow {
                         color: "white"
                         text: "close"
                         font {
-                            family: "Segoe UI, fonts/Roboto-Regular.ttf"
+                            family: "Segoe UI, ../fonts/Roboto-Regular.ttf"
                             pixelSize: 16
                         }
 
@@ -111,7 +111,6 @@ ApplicationWindow {
 
                     Rectangle {
                         Layout.preferredWidth: 200
-                        //width: children[0].width
                         Layout.fillHeight: true
                         color: "#9BCC29"
 
@@ -123,7 +122,7 @@ ApplicationWindow {
                             text: selected_file.toUpperCase()
                             anchors.verticalCenter: parent.verticalCenter
                             font {
-                                family: "fonts/Roboto-Thin.ttf"
+                                family: "../fonts/Roboto-Thin.ttf"
                                 pixelSize: 16
                             }
                         }
@@ -165,7 +164,7 @@ ApplicationWindow {
                             anchors.centerIn: parent
                             width: 36
                             height: 36
-                            source: "icons/ic_more_horiz_white_36dp.png"
+                            source: "../icons/ic_more_horiz_white_36dp.png"
                         }
                     }
 
@@ -213,11 +212,11 @@ ApplicationWindow {
                     ListModel {
                         id: lmodel
                         ListElement {
-                            file: "images/car-repair.jpg"
+                            file: "../images/car_repair.jpg"
                         }
 
                         ListElement {
-                            file: "images/blueberries.jpg"
+                            file: "../images/blueberries.jpg"
                         }
                     }
 
@@ -243,7 +242,7 @@ ApplicationWindow {
                                     preview.source = parent.children[1].source
                                     var sel_file_path = lView.model.get(lView.currentIndex).file
                                     var splits = sel_file_path.split('/');
-                                    selected_file = splits[1]
+                                    selected_file = splits[2]
                                 }
                             }
 
